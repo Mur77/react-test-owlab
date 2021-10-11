@@ -1,6 +1,8 @@
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import { CommonLayout } from './layouts/CommonLayout'
+import { Login, Main, Profile, News } from './views'
+
+import styles from './App.module.scss'
 
 function App() {
     return (
@@ -8,7 +10,7 @@ function App() {
             <div className="App">
                 <Switch>
                     <Route path="/views">
-                        <Views />
+                        <News />
                     </Route>
                     <Route path="/profile">
                         <Profile />

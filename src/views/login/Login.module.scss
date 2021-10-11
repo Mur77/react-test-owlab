@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.loginWindow {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 200px;
+    height: 160px;
+    padding: 12px;
+}
+
+.title {
+    font-size: 18px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.input {
+    height: 30px;
+    margin-bottom: 12px;
+    padding-left: 8px;
+    background-color: lightcyan;
+    border: 1px solid black;
+}
+
+.buttonContainer {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.button {
+    width: 50px;
+    height: 28px;
+    background: none;
+    border: 1px solid black;
+}
+
+.buttonWhite {
+    background-color: white;
+}

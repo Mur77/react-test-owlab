@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import styles from './Menu.scss'
+import styles from './Menu.module.scss'
 
 const menuItems = [
     {
@@ -8,8 +8,8 @@ const menuItems = [
         link: '/',
     },
     {
-        name: 'Views',
-        link: '/views',
+        name: 'News',
+        link: '/news',
     },
     {
         name: 'Profile',
