@@ -27,9 +27,9 @@ export const Menu = () => {
         <div className={styles.container}>
             <div className={styles.flexContainer}>
                 {menuItems.map((item) => (
-                    <Link to={item.link}>{item.name}</Link>
+                    <Link key={item.name} to={item.link}>{item.name}</Link>
                 ))}
-                {logged && <Link to='/login'>Logout</Link>}
+                {logged && <Link to='/logout'>Logout</Link>}
             </div>
         </div>
     )

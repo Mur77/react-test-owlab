@@ -1,14 +1,29 @@
 import { useState, useRef } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useLocation, useHistory } from 'react-router'
 
 import { CommonLayout } from '../../layouts/CommonLayout'
+import { login, selectLoggedIn } from '../../slices/userSlice'
 
 import styles from './Login.module.scss'
 
-export const Login = () => {
+interface iLogin {
+    prevUrl: string
+}
+
+export const Login: React.FC<iLogin> = ({ prevUrl }) => {
     const [buttonPressed, setButtonPressed] = useState(false)
     const [error, setError] = useState(false)
+
     const userRef = useRef<HTMLInputElement>(null)
     const passRef = useRef<HTMLInputElement>(null)
+
+    const logged = useSelector(selectLoggedIn)
+    const dispatch = useDispatch()
+
+    const location = useLocation()
+    const history = useHistory()
+
     const username = 'Admin'
     const password = '12345'
 
@@ -21,8 +36,9 @@ export const Login = () => {
         }
         if(userRef.current && passRef.current) {
             if (userRef.current.value === username && passRef.current.value === password) {
-                console.log('OK')
+                dispatch(login())
                 setError(false)
+                history.replace(prevUrl)
             } else {
                 setError(true)
             }
@@ -31,6 +47,7 @@ export const Login = () => {
 
     return (
         <CommonLayout>
+            {console.log(prevUrl)}
             <div className={styles.container}>
                 <div className={`${styles.loginWindow} ${error && styles.loginWindowWithError}`}>
                     <div className={styles.title}>Authorization</div>
