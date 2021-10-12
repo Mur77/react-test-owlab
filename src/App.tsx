@@ -10,8 +10,6 @@ import { useSelector } from 'react-redux'
 import { Login, Logout, Main, Profile, News } from './views'
 import { selectLoggedIn } from './slices/userSlice'
 
-import styles from './App.module.scss'
-
 function App() {
     const [url, setUrl] = useState('/')
     const logged = useSelector(selectLoggedIn)
