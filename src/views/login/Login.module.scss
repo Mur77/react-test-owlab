@@ -13,9 +13,19 @@
 .loginWindow {
     border: 1px solid black;
     border-radius: 10px;
-    width: 200px;
+    width: 300px;
     height: 160px;
     padding: 12px;
+    text-align: center;
+}
+
+.loginWindowWithError {
+    height: 200px;
+}
+
+.error {
+    color: firebrick;
+    margin-bottom: 12px;
 }
 
 .title {
@@ -26,6 +36,7 @@
 
 .input {
     height: 30px;
+    width: 260px;
     margin-bottom: 12px;
     padding-left: 8px;
     background-color: lightcyan;
@@ -33,7 +44,6 @@
 }
 
 .buttonContainer {
-    text-align: center;
     margin-top: 5px;
 }
 

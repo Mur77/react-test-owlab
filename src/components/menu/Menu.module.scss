@@ -1,15 +1,19 @@
 .container {
-    display: flex;
-    position: absolute;
-    align-items: center;
-    padding-left: 120px;
-    height: 40px;
+    position: absolute; 
     width: 100%;
+    height: 40px;
     background-color: lightskyblue;
     z-index: 10;
 }
 
-.container a {
+.flexContainer {
+    display: flex;
+    align-items: center;
+    padding-left: 120px;
+    height: 40px;
+}
+
+.flexContainer a {
     text-decoration: none;
     color: black;
     margin-right: 20px;

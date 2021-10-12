@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+
+import { selectLoggedIn } from '../../slices/userSlice'
 
 import styles from './Menu.module.scss'
 
@@ -15,18 +18,19 @@ const menuItems = [
         name: 'Profile',
         link: '/profile',
     },
-    {
-        name: 'Login',
-        link: '/login',
-    },
 ]
 
 export const Menu = () => {
+    const logged = useSelector(selectLoggedIn)
+
     return (
         <div className={styles.container}>
-            {menuItems.map((item) => (
-                <Link to={item.link}>{item.name}</Link>
-            ))}
+            <div className={styles.flexContainer}>
+                {menuItems.map((item) => (
+                    <Link to={item.link}>{item.name}</Link>
+                ))}
+                {logged && <Link to='/login'>Logout</Link>}
+            </div>
         </div>
     )
 }
