@@ -5,8 +5,10 @@ interface iUserState {
     loggedIn: boolean
 }
 
+const storage = window.localStorage
+
 const initialState: iUserState = {
-    loggedIn: false
+    loggedIn: !!storage.getItem('react-test-owlab')
 }
 
 export const userSlice = createSlice({
